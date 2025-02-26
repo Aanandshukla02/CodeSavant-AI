@@ -55,11 +55,10 @@ npm run dev
 3. **Receive AI-generated feedback** instantly.
 
 ## 📷 Screenshot
-<img width="1440" alt="Screenshot 2025-02-22 at 10 59 23 AM" src="https://github.com/user-attachments/assets/0104a989-3b3b-43bb-bf84-c89fa6f42498" />
-<img width="1440" alt="Screenshot 2025-02-22 at 10 59 35 AM" src="https://github.com/user-attachments/assets/9c3f352f-524b-4cd8-a282-c4ed5db60164" />
-<img width="1440" alt="Screenshot 2025-02-22 at 10 59 54 AM" src="https://github.com/user-attachments/assets/f092929a-0c08-4dc4-a354-c5cd8d63c41b" />
-<img width="1440" alt="Screenshot 2025-02-22 at 11 00 06 AM" src="https://github.com/user-attachments/assets/d9b3e99b-328d-413c-8a9e-a9705593056c" />
-<img width="1440" alt="Screenshot 2025-02-22 at 11 00 24 AM" src="https://github.com/user-attachments/assets/561b536f-5b5d-4a55-9ca1-10d3113c27a6" />
+<img width="1440" alt="Screenshot 2025-02-26 at 3 24 21 PM" src="https://github.com/user-attachments/assets/28e92d67-5829-46c2-88fe-4a77b859f147" />
+<img width="1440" alt="Screenshot 2025-02-26 at 3 24 45 PM" src="https://github.com/user-attachments/assets/56624232-f6ea-4a1b-b0f4-e025ee38bd62" />
+<img width="1440" alt="Screenshot 2025-02-26 at 3 24 57 PM" src="https://github.com/user-attachments/assets/77e07796-ea8c-4066-8f39-7e791ca45f72" />
+<img width="1440" alt="Screenshot 2025-02-26 at 3 25 14 PM" src="https://github.com/user-attachments/assets/94d1dbde-e29f-4b9a-89b2-6f129ad94e8b" />
 
 
 ## 📜 License
