@@ -1,0 +1,33 @@
+.right-panel {
+  flex: 1;
+  padding: 1rem;
+  border-left: 1px solid #444;
+  background-color: #343434;
+  font-size: 1.5rem;
+  overflow: auto;
+}
+.loading {
+  text-align: center;
+  color: #aaa;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.copy-button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #7e57c2;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.copy-button:hover {
+  background-color: #a5a5ff;
+}
+.welcome-text {
+  text-align: center;
+  color: #aaa;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}

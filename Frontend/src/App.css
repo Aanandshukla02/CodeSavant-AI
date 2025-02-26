@@ -1,0 +1,13 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  height: calc(100% - 70px); 
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden; 
+}
