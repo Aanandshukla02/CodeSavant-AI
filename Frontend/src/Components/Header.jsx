@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./Header.css";
 
 function Header() {
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
   const [isErasing, setIsErasing] = useState(false);
-  const text = "Developed by aaanandd";
+  const text = "Turning Code into Confidence";
+
+  const { user, logout, isAuthenticated } = useAuth0();
 
   useEffect(() => {
     let timer;
@@ -32,8 +35,29 @@ function Header() {
 
   return (
     <header className="app-header">
-      <h1 className="header-title">CodeSavant-AI</h1>
-      <span className="developer">{displayText}</span>
+      <div className="header-left">
+        <h1 className="header-title">CodeSavant-AI</h1>
+        <span className="developer">{displayText}</span>
+      </div>
+
+      {isAuthenticated && (
+        <div className="header-right">
+          <img
+            src={user.picture}
+            alt="profile"
+            className="user-pic"
+          />
+          <span className="user-info">
+            {user.name} ({user.email})
+          </span>
+          <button
+            onClick={() => logout({ returnTo: window.location.origin })}
+            className="logout-btn"
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </header>
   );
 }
