@@ -55,11 +55,12 @@ npm run dev
 3. **Receive AI-generated feedback** instantly.
 
 ## 📷 Screenshot
-<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 50 15 PM" src="https://github.com/user-attachments/assets/92daecf5-a778-4db1-9ed9-d4a5347aa0c9" />
-<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 49 59 PM" src="https://github.com/user-attachments/assets/9ea51aac-d7ec-4622-90c3-a26a6e7bbf38" />
-<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 48 56 PM" src="https://github.com/user-attachments/assets/0b296ff1-1dce-49d8-a61c-9d40b524abec" />
-<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 48 43 PM" src="https://github.com/user-attachments/assets/7be5cc13-c023-4b02-b3ce-0c32517d60e7" />
+
 <img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 47 37 PM" src="https://github.com/user-attachments/assets/0b4f86fa-5c28-426d-b4ec-0e64544966c6" />
+<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 48 43 PM" src="https://github.com/user-attachments/assets/7be5cc13-c023-4b02-b3ce-0c32517d60e7" />
+<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 48 56 PM" src="https://github.com/user-attachments/assets/0b296ff1-1dce-49d8-a61c-9d40b524abec" />
+<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 49 59 PM" src="https://github.com/user-attachments/assets/9ea51aac-d7ec-4622-90c3-a26a6e7bbf38" />
+<img width="1710" height="1112" alt="Screenshot 2025-08-22 at 11 50 15 PM" src="https://github.com/user-attachments/assets/92daecf5-a778-4db1-9ed9-d4a5347aa0c9" />
 
 
 
