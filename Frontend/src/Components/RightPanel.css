@@ -1,33 +1,24 @@
-.right-panel {
-  flex: 1;
-  padding: 1rem;
-  border-left: 1px solid #444;
-  background-color: #343434;
-  font-size: 1.5rem;
-  overflow: auto;
+.review-text h1, 
+.review-text h2, 
+.review-text h3 {
+  color: #00bfff;
+  margin: 10px 0 6px;
 }
-.loading {
-  text-align: center;
-  color: #aaa;
-  margin-top: 2rem;
-  font-size: 1.2rem;
+
+.review-text p {
+  margin: 6px 0;
 }
-.copy-button {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: #7e57c2;
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+
+.review-text strong {
+  color: #ffffff;
+  font-weight: 700;
 }
-.copy-button:hover {
-  background-color: #a5a5ff;
+
+.review-text ul {
+  margin: 8px 0;
+  padding-left: 20px;
 }
-.welcome-text {
-  text-align: center;
-  color: #aaa;
-  margin-top: 2rem;
-  font-size: 1.2rem;
+
+.review-text li {
+  margin: 4px 0;
 }

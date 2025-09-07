@@ -6,128 +6,80 @@ import LeftPanel from "./Components/LeftPanel";
 import RightPanel from "./Components/RightPanel";
 import { useAuth0 } from "@auth0/auth0-react";
 
-// ------------------ Utility Functions ------------------
 const getDefaultCodeForLanguage = (lang) => {
   switch (lang) {
     case "javascript":
-      return `function greetUser(userName) {
-  return "Welcome, " + userName + "!";
-}`;
+      return `function greetUser(userName) {\n  return "Welcome, " + userName + "!";\n}`;
     case "c":
-      return `#include <stdio.h>
-int main() {
-    printf("Hello, world!\\n");
-    return 0;
-}`;
+      return `#include <stdio.h>\nint main() {\n    printf("Hello, world!\\n");\n    return 0;\n}`;
     case "cpp":
-      return `#include <iostream>
-using namespace std;
-int main() {
-    cout << "Hello, world!";
-    return 0;
-}`;
+      return `#include <iostream>\nusing namespace std;\nint main() {\n    cout << "Hello, world!";\n    return 0;\n}`;
     case "java":
-      return `public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
-}`;
+      return `public class Main {\n    public static void main(String[] args) {\n        System.out.println("Hello, world!");\n    }\n}`;
     default:
       return "";
   }
 };
 
 function isLikelyCode(input) {
-  const codeTokens = [
-    "function",
-    "{",
-    "}",
-    ";",
-    "#include",
-    "public class",
-    "int main",
-    "printf",
-    "console.log",
-    "=>",
-  ];
+  const codeTokens = ["function", "{", "}", ";", "#include", "public class", "int main", "printf", "console.log", "=>"];
   return codeTokens.some((token) => input.includes(token));
 }
 
-// ------------------ Main Component ------------------
 function App() {
   const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
 
   const [language, setLanguage] = useState("javascript");
   const [code, setCode] = useState(getDefaultCodeForLanguage("javascript"));
   const [review, setReview] = useState("");
-  const [copyText, setCopyText] = useState("Copy");
   const [isReviewing, setIsReviewing] = useState(false);
 
-  // 🔑 Auto login when not authenticated
+  // Auto login
   useEffect(() => {
     if (!isAuthenticated && !isLoading) {
-      loginWithRedirect({
-        prompt: "select_account", // force user to choose Google account
-      });
+      loginWithRedirect({ prompt: "select_account" });
     }
   }, [isAuthenticated, isLoading, loginWithRedirect]);
 
   // ------------------ Review Function ------------------
   async function reviewCode() {
-    setIsReviewing(true);
-    setReview("");
     if (!isLikelyCode(code)) {
-      setReview(
-        "Sorry, but this application is intended exclusively for code review purposes, " +
-          "as designed by my developer Anand Shukla. Please provide valid code for analysis."
-      );
-      setIsReviewing(false);
+      setReview("⚠️ Please provide valid code for analysis.");
       return;
     }
 
-    try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
-        code,
-        language,
-      });
-      setReview(response.data);
-    } catch (error) {
-      setReview("Error fetching review. Please try again.");
-    }
-    setIsReviewing(false);
-  }
+    setIsReviewing(true);
+    setReview("");
 
-  function copyToClipboard() {
-    navigator.clipboard
-      .writeText(review)
-      .then(() => {
-        setCopyText("Copied!");
-        setTimeout(() => setCopyText("Copy"), 2000);
-      })
-      .catch(() => {
-        setCopyText("Failed to Copy");
-        setTimeout(() => setCopyText("Copy"), 2000);
-      });
+    try {
+      const response = await axios.post("http://localhost:3000/ai/get-review", { code, language });
+      setReview(response.data.review);
+    } catch (error) {
+      setReview("❌ Error fetching review. Try again.");
+    }
+
+    setIsReviewing(false);
   }
 
   function handleLanguageChange(e) {
     const selectedLang = e.target.value;
     setLanguage(selectedLang);
-    setCode(getDefaultCodeForLanguage(selectedLang));
+    const defaultCode = getDefaultCodeForLanguage(selectedLang);
+    setCode(defaultCode);
+    setReview(""); // Clear previous review on language change
   }
 
-  // ------------------ Render ------------------
-  if (isLoading) {
-    return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
+  function applyCorrectedCode(corrected) {
+    setCode(corrected);
+    setReview(""); // Reset review so user can recheck
   }
 
-  if (!isAuthenticated) {
-    return null; // jab tak login nahi hota kuch mat dikhao
-  }
+  if (isLoading) return <h2 style={{ textAlign: "center" }}>Loading...</h2>;
+  if (!isAuthenticated) return null;
 
   return (
     <>
-      <Header /> {/* ✅ User info aur logout ab yahan handle hoga */}
+      <Header />
 
       <main>
         <LeftPanel
@@ -142,8 +94,7 @@ function App() {
         <RightPanel
           isReviewing={isReviewing}
           review={review}
-          copyText={copyText}
-          copyToClipboard={copyToClipboard}
+          applyCorrectedCode={applyCorrectedCode}
         />
       </main>
     </>

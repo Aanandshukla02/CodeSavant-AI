@@ -1,6 +1,33 @@
-require('dotenv').config()
-const app = require('./src/app')
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const rateLimit = require("express-rate-limit");
+const aiRoutes = require("./src/routes/ai.routes");
 
-app.listen(3000, () => {
-    console.log('Server is running on http://localhost:3000')
-})
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// -------------------- Middlewares --------------------
+app.use(cors());
+app.use(express.json());
+app.use(morgan("dev"));
+
+// -------------------- Rate Limiting --------------------
+app.use(rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 min
+  max: 100,
+  message: { error: "Too many requests, please try again later." },
+}));
+
+// -------------------- Routes --------------------
+app.get("/", (req, res) => {
+  res.send("Hello World - LangChain Gemini Backend 🚀");
+});
+
+app.use("/ai", aiRoutes);
+
+// -------------------- Start Server --------------------
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
+});

@@ -1,18 +1,19 @@
 {
-  "name": "Anand_Shukla",
+  "name": "anand_shukla_langchain_backend",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@google/generative-ai": "^0.22.0",
+    "@langchain/core": "^0.3.75",
+    "@langchain/google-genai": "^0.1.12",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.1.0",
+    "langchain": "^0.2.16",
+    "morgan": "^1.10.1"
   }
 }

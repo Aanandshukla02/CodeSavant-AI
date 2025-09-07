@@ -13,11 +13,12 @@
     "@auth0/auth0-react": "^2.4.0",
     "axios": "^1.7.9",
     "highlight.js": "^11.11.1",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-markdown": "^10.0.0",
+    "react-markdown": "^10.1.0",
     "react-simple-code-editor": "^0.14.1",
+    "react-syntax-highlighter": "^15.6.6",
     "rehype-highlight": "^7.0.2"
   },
   "devDependencies": {
