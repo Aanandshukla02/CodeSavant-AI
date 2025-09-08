@@ -1,10 +1,13 @@
+
 # CodeSavant-AI  
 
 ## 🚀 Project Overview  
-CodeSavant-AI is an **AI-powered code review platform** built on the **MERN stack** with **Google Gemini AI** integration.  
-It now comes with **Google OAuth Login/Signup** so developers can securely sign in with just one click.  
+**CodeSavant-AI** is a **real-time AI-powered code review platform** built with the **MERN stack** and powered by **Google Gemini AI**.  
 
-The app processes code via APIs in **real-time** – **no database storage** is used.  
+It enables developers to get **instant AI-generated feedback** on their code without storing any data.  
+Authentication is handled via **Google OAuth 2.0 + JWT** for secure, one-click login.  
+
+👉 **Live Demo:** [CodeSavant-AI](https://codesavant-ai-frontend.onrender.com)  
 
 ---
 
@@ -13,26 +16,29 @@ The app processes code via APIs in **real-time** – **no database storage** is 
 - **Backend:** Node.js, Express.js  
 - **AI Integration:** Google Gemini AI  
 - **Authentication:** Google OAuth 2.0 + JWT  
-- **API-Based Data Flow** (No DB required)  
+- **Hosting:** Render (Frontend + Backend)  
+- **API-Based Data Flow:** No Database Required  
 
 ---
 
 ## ✨ Features  
-- 🔑 **Google OAuth Login/Signup** (JWT-based, DB-less).  
-- 🤖 **AI-Powered Code Review** using Gemini AI.  
-- ⚡ **Real-time analysis** via API.  
-- 🎨 **User-friendly UI** built with React.js.  
-- 🔒 **Protected API Routes** with JWT middleware.  
+- 🔑 **Google OAuth Login/Signup** (JWT-secured, no DB).  
+- 🤖 **AI-Powered Code Review** with Gemini AI.  
+- ⚡ **Real-time feedback** via APIs.  
+- 🎨 **Modern, responsive UI** with React + Tailwind.  
+- 🔒 **Protected routes** using JWT middleware.  
 
 ---
 
-## 🏗️ Installation & Setup  
+## 🏗️ Installation & Setup (Local Development)  
 
 ### 1️⃣ Clone the Repository  
 ```bash
 git clone https://github.com/Aanandshukla02/CodeSavant-AI.git
 cd CodeSavant-AI
 ````
+
+---
 
 ### 2️⃣ Backend Setup
 
@@ -41,7 +47,7 @@ cd backend
 npm install
 ```
 
-Create a `.env` file inside `backend/` (example below):
+Create a `.env` file inside `backend/`:
 
 ```env
 PORT=8000
@@ -53,11 +59,13 @@ GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_CALLBACK_PATH=/auth/google/callback
 ```
 
-Run backend:
+Run backend server:
 
 ```bash
 npx nodemon
 ```
+
+---
 
 ### 3️⃣ Frontend Setup
 
@@ -66,7 +74,7 @@ cd frontend
 npm install
 ```
 
-Create a `.env` file inside `frontend/`:
+Create `.env` inside `frontend/`:
 
 ```env
 VITE_BACKEND_URL=http://localhost:8000
@@ -83,38 +91,27 @@ npm run dev
 ## 🔐 Google OAuth Setup
 
 1. Go to **Google Cloud Console → APIs & Services → Credentials**.
-2. Create a new **OAuth 2.0 Client ID** (type: *Web Application*).
+
+2. Create a new **OAuth 2.0 Client ID** (Application type: *Web Application*).
+
 3. Add Authorized Redirect URI:
 
    ```
    http://localhost:8000/auth/google/callback
    ```
+
+   *(For Production: use your Render backend URL, e.g. `https://codesavant-ai-backend.onrender.com/auth/google/callback`)*
+
 4. Copy **Client ID** & **Client Secret** → add to backend `.env`.
 
 ---
 
 ## 📌 Usage
 
-1. Open frontend at `http://localhost:5173`.
-2. Click **Continue with Google** to login.
-3. Paste code snippet → **Submit for review**.
-4. Get **AI-generated feedback** instantly.
-
----
-
-## 📷 Screenshots
-
-<img width="1710" height="1112" alt="Screenshot 1" src="https://github.com/user-attachments/assets/0b4f86fa-5c28-426d-b4ec-0e64544966c6" />  
-
-<img width="1710" height="1112" alt="Screenshot 2" src="https://github.com/user-attachments/assets/7be5cc13-c023-4b02-b3ce-0c32517d60e7" />  
-
-<img width="1710" height="1112" alt="Screenshot 3" src="https://github.com/user-attachments/assets/0b296ff1-1dce-49d8-a61c-9d40b524abec" />  
-
-<img width="1710" height="1112" alt="Screenshot 4" src="https://github.com/user-attachments/assets/9ea51aac-d7ec-4622-90c3-a26a6e7bbf38" />  
-
-<img width="1710" height="1112" alt="Screenshot 5" src="https://github.com/user-attachments/assets/92daecf5-a778-4db1-9ed9-d4a5347aa0c9" />  
-
----
+1. Visit 👉 [CodeSavant-AI Live](https://codesavant-ai-frontend.onrender.com).
+2. Click **Continue with Google** to sign in.
+3. Paste your code snippet → **Submit for Review**.
+4. Get **instant AI-powered feedback** ✨.
 
 ## 📜 License
 
