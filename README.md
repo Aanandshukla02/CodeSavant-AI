@@ -2,9 +2,9 @@
 # CodeSavant-AI  
 
 ## 🚀 Project Overview  
-**CodeSavant-AI** is a **real-time AI-powered code review platform** built with the **MERN stack** and powered by **Google Gemini AI**.  
+**CodeSavant-AI** is an **AI-powered code review platform** built with **LangChain + Google Gemini LLM** and **Node.js**.  
 
-It enables developers to get **instant AI-generated feedback** on their code without storing any data.  
+It enables developers to get **instant AI-generated feedback** on their code in real-time — with **no database storage**.  
 Authentication is handled via **Google OAuth 2.0 + JWT** for secure, one-click login.  
 
 👉 **Live Demo:** [CodeSavant-AI](https://codesavant-ai-frontend.onrender.com)  
@@ -12,9 +12,9 @@ Authentication is handled via **Google OAuth 2.0 + JWT** for secure, one-click l
 ---
 
 ## 🛠️ Tech Stack  
-- **Frontend:** React.js (Vite)  
+- **Frontend:** React.js (Vite + Tailwind)  
 - **Backend:** Node.js, Express.js  
-- **AI Integration:** Google Gemini AI  
+- **AI Integration:** Google Gemini AI (via **LangChain**)  
 - **Authentication:** Google OAuth 2.0 + JWT  
 - **Hosting:** Render (Frontend + Backend)  
 - **API-Based Data Flow:** No Database Required  
@@ -23,10 +23,10 @@ Authentication is handled via **Google OAuth 2.0 + JWT** for secure, one-click l
 
 ## ✨ Features  
 - 🔑 **Google OAuth Login/Signup** (JWT-secured, no DB).  
-- 🤖 **AI-Powered Code Review** with Gemini AI.  
-- ⚡ **Real-time feedback** via APIs.  
+- 🤖 **LangChain-powered AI Code Review** using Gemini LLM.  
+- ⚡ **Real-time analysis & feedback** via APIs.  
 - 🎨 **Modern, responsive UI** with React + Tailwind.  
-- 🔒 **Protected routes** using JWT middleware.  
+- 🔒 **JWT Middleware** for protected routes.  
 
 ---
 
@@ -111,7 +111,9 @@ npm run dev
 1. Visit 👉 [CodeSavant-AI Live](https://codesavant-ai-frontend.onrender.com).
 2. Click **Continue with Google** to sign in.
 3. Paste your code snippet → **Submit for Review**.
-4. Get **instant AI-powered feedback** ✨.
+4. Get **AI-powered insights & suggestions instantly** ✨.
+
+---
 
 ## 📜 License
 
