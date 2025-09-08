@@ -52,7 +52,7 @@ function App() {
     setReview("");
 
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", { code, language });
+      const response = await axios.post("https://codesavant-ai.onrender.com/ai/get-review", { code, language });
       setReview(response.data.review);
     } catch (error) {
       setReview("❌ Error fetching review. Try again.");
